@@ -96,40 +96,64 @@ docker compose -p kitchenpos up -d
 
 ## 용어 사전
 ### 상품
-| 한글명  | 영문명 | 설명 |
-|------| --- | --- |
-| 상품 | Product | 판매될 수 있는 물리적 제품 |
-| 상품 가격 | Product Price | 상품을 구매하기 위해 지불해야하는 금액  |
-| 상품 이름 | Product Name | 제품을 식별하기 위한 명칭 |
+| 한글명  | 영문명 | 설명                    |
+|------| --- |-----------------------|
+| 상품 | Product | 판매될 수 있는 물리적 제품       |
+| 상품 가격 | Product Price | 상품을 구매하기 위해 지불해야하는 금액 |
+| 상품 이름 | Product Name | 상품을 식별하기 위한 명칭        |
 
 ### 메뉴
-| 한글명  | 영문명 | 설명 |
-|------| --- | --- |
-| 메뉴 그룹 | Menu Group | 여러 메뉴들을 특정 기준으로 묶은 모음 |
-| 메뉴 그룹 이름 | Menu Group Name | e.g. 세트A, 나홀로 메뉴, 셋트 메뉴 |
-| 메뉴 | Menu | 손님이 구매할 수 있는 최소 단위 |
-| 메뉴 이름 | Menu Name | 메뉴 상품들을 대표하는 명칭 |
-| 메뉴 가격 | Menu Price | 손님이 지불해야될 금액 |
-| 메뉴 상품 | Menu Product | 손님에게 제공하는 제품 |
-| 메뉴 상품 개수 | Menu Product Count | 손님에게 제공되는 제품 수량 |
-| 메뉴 노출됨 | Menu Displayed | 손님에게 메뉴가 보여지지 않음 |
-| 메뉴 숨겨짐 | Menu Hided | 손님에게 메뉴가 노출됨 |
+| 한글명      | 영문명                | 설명                      |
+|----------|--------------------|-------------------------|
+| 메뉴 그룹    | Menu Group         | 여러 메뉴들을 특정 기준으로 묶은 모음   |
+| 메뉴 그룹 이름 | Menu Group Name    | e.g. 세트A, 나홀로 메뉴, 셋트 메뉴 |
+| 메뉴       | Menu               | 손님이 구매할 수 있는 최소 단위      |
+| 메뉴 이름    | Menu Name          | 메뉴 상품들을 대표하는 명칭         |
+| 메뉴 가격    | Menu Price         | 손님이 지불해야될 금액            |
+| 메뉴 상품    | Menu Product       | 손님에게 제공하는 제품            |
+| 메뉴 상품 개수 | Menu Product Count | 손님에게 제공되는 제품 수량         |
+| 노출 메뉴    | Displayed Menu     | 손님에게 메뉴가 노출된 상태         |
+| 숨김 메뉴    | Hide Menu          | 손님에게 메뉴가 숨겨진 상태         |
 
 ### 주문
-| 한글명  | 영문명 | 설명 |
-|------| --- | --- |
-| 주문 | Order | 손님이 메뉴를 구매하기 위한 요청 |
-| 주문 항목 | Order Line Item | 손님이 요청한 메뉴 모음 |
-| 주문 유형 | Order Type | 매장 주문 / 포장 주문 / 배달 주문 |
-| 주문 상태 | Order Status | 대기중, 접수됨, 제공됨, 배달중, 배달 완료, 완료 |
-| 주문 테이블 | Order Table | 매장 주문 손님이 사용하는 테이블 |
-| 주문 테이블 이름 | Order Table Name | e.g. 1번 테이블, 2번 테이블, 3번 테이블 |
-| 주문 테이블 사용중  | Order Table Occupied | 손님이 이용중인 상태 |
-| 주문 테이블 비었음 | Order Table Cleared | 손님이 이용중이지 않은 상태 |
-| 배달 | Order Delivery | 손님이 요청한 메뉴를 포장하여 지정된 목적지로 전달하는 과정 |
-| 배달 주소 | Order Delivery Address | e.g. 서울특별시 … 선릉역 태크살롱  |
-| 배달 담당자 | Order Delivery Rider | 손님에게 메뉴를 전달하는 역할을 맡은 사람 |
-| 주문을 하지 않은 손님 | Guest | 방문은 했지만 주문을 하지 않은 고객 |
-| 주문을 한 손님 | Customer | 주문을 한 고객 |
+
+#### 배달 주문
+| 한글명     | 영문명                     | 설명                           |
+|---------|-------------------------|------------------------------|
+| 배달 주문   | Delivery Order          | 손님이 구매한 메뉴를 지정된 목적지로 전달하여 제공 |
+| 주문 항목   | Order Line Item        | 손님이 구매 요청한 메뉴 모음             |
+| 주문 대기   | Delivery Order Wating     | 배달 주문이 요청된 상태                |
+| 주문 접수   | Delivery Order Accepted   | 배달 주문이 접수된 상태                |
+| 주문 제공   | Delivery Order Served     | 배달 주문 메뉴가 전달될 준비가된 상태      |
+| 주문 배달중  | Delivery Order Delivering | 배달 주문 메뉴가 전달중인 상태            |
+| 주문 배달완료 | Delivery Order Delivered  | 배달 주문 메뉴가 전달이 완료된 상태         |
+| 주문 완료   | Delivery Order Completed  | 배달 주문이 완료된 상태                |
+| 배달 주소   | Delivery Address        | 손님이 구매한 메뉴를 전달할 목적지          |
+| 배달원     | Delivery Rider          | 손님이 구매한 메뉴를 전달하는 사람          |
+
+#### 주문 매장
+| 한글명          | 영문명                    | 설명                              |
+|--------------|------------------------|---------------------------------|
+| 매장 주문        | Eat-In Order           | 손님이 구매한 메뉴를 지정된 주문 테이블로 전달하여 제공 |
+| 주문 항목        | Order Line Item        | 손님이 구매 요청한 메뉴 모음    |
+| 주문 대기        | Eat-In Order Wating    | 매장 주문이 요청된 상태                   |
+| 주문 접수        | Eat-In Order Accepted  | 매장 주문이 접수된 상태                   |
+| 주문 제공        | Eat-In Order Served    | 매장 주문 메뉴가 제공된 상태                |
+| 주문 완료        | Eat-In Order Completed | 매장 주문이 완료된 상태                   |
+| 주문 테이블       | Order Table            | 매장 주문 손님이 사용하는 테이블              |
+| 주문 테이블 이름    | Order Table Name       | e.g. 1번 테이블, 2번 테이블, 3번 테이블     |
+| 사용중인 주문 테이블  | Occupied Order Table   | 손님이 사용중인 테이블                    |
+| 빈 주문 테이블     | Cleared Order Table    | 손님이 사용중이지 않은 테이블                |
+
+#### 포장 주문
+| 한글명          | 영문명                  | 설명                  |
+|--------------|----------------------|---------------------|
+| 포장 주문        | Takeout Order        | 손님이 구매한 메뉴를 포장하여 제공 |
+| 주문 항목        | Order Line Item        | 손님이 구매 요청한 메뉴 모음    |
+| 주문 대기        | Takeout Order Wating    | 포장 주문이 요청된 상태       |
+| 주문 접수        | Takeout Order Accepted  | 포장 주문이 접수된 상태       |
+| 주문 제공        | Takeout Order Served    | 포장 주문 메뉴가 제공된 상태    |
+| 주문 완료        | Takeout Order Completed | 포장 주문이 완료된 상태       |
+
 
 ## 모델링
