@@ -96,11 +96,12 @@ docker compose -p kitchenpos up -d
 
 ## 용어 사전
 ### 상품
-| 한글명  | 영문명 | 설명                    |
-|------| --- |-----------------------|
-| 상품 | Product | 판매될 수 있는 물리적 제품       |
+| 한글명   | 영문명           | 설명                    |
+|-------|---------------|-----------------------|
+| 상품    | Product       | 판매될 수 있는 물리적 제품       |
 | 상품 가격 | Product Price | 상품을 구매하기 위해 지불해야하는 금액 |
-| 상품 이름 | Product Name | 상품을 식별하기 위한 명칭        |
+| 상품 이름 | Product Name  | 상품을 식별하기 위한 명칭        |
+| 비속어   | Black Word    | 부적절한 내용               |
 
 ### 메뉴
 | 한글명      | 영문명                | 설명                      |
@@ -114,46 +115,48 @@ docker compose -p kitchenpos up -d
 | 메뉴 상품 개수 | Menu Product Count | 손님에게 제공되는 제품 수량         |
 | 노출 메뉴    | Displayed Menu     | 손님에게 메뉴가 노출된 상태         |
 | 숨김 메뉴    | Hide Menu          | 손님에게 메뉴가 숨겨진 상태         |
+| 비속어   | Black Word    | 부적절한 내용               |
 
 ### 주문
 
 #### 배달 주문
-| 한글명     | 영문명                     | 설명                           |
-|---------|-------------------------|------------------------------|
-| 배달 주문   | Delivery Order          | 손님이 구매한 메뉴를 지정된 목적지로 전달하여 제공 |
-| 주문 항목   | Order Line Item        | 손님이 구매 요청한 메뉴 모음             |
-| 주문 대기   | Delivery Order Wating     | 배달 주문이 요청된 상태                |
-| 주문 접수   | Delivery Order Accepted   | 배달 주문이 접수된 상태                |
-| 주문 제공   | Delivery Order Served     | 배달 주문 메뉴가 전달될 준비가된 상태      |
-| 주문 배달중  | Delivery Order Delivering | 배달 주문 메뉴가 전달중인 상태            |
-| 주문 배달완료 | Delivery Order Delivered  | 배달 주문 메뉴가 전달이 완료된 상태         |
-| 주문 완료   | Delivery Order Completed  | 배달 주문이 완료된 상태                |
-| 배달 주소   | Delivery Address        | 손님이 구매한 메뉴를 전달할 목적지          |
-| 배달원     | Delivery Rider          | 손님이 구매한 메뉴를 전달하는 사람          |
+| 한글명       | 영문명                       | 설명                           |
+|-----------|---------------------------|------------------------------|
+| 배달 주문     | Delivery Order            | 손님이 구매한 메뉴를 지정된 목적지로 전달하여 제공 |
+| 주문 항목     | Order Line Item           | 손님이 구매 요청한 메뉴 모음             |
+| 배달 주문 대기  | Delivery Order Waiting    | 배달 주문이 요청된 상태                |
+| 배달 주문 접수  | Delivery Order Accepted   | 배달 주문이 접수된 상태                |
+| 배달 주문 제공  | Delivery Order Served     | 배달 주문 메뉴가 전달될 준비가된 상태        |
+| 배달 주문 배달중 | Delivery Order Delivering | 배달 주문 메뉴가 전달중인 상태            |
+| 배달 주문 배달완료 | Delivery Order Delivered  | 배달 주문 메뉴가 전달이 완료된 상태         |
+| 주문 완료     | Delivery Order Completed  | 배달 주문이 완료된 상태                |
+| 배달 주소     | Delivery Address          | 손님이 구매한 메뉴를 전달할 목적지          |
+| 배달업체      | Delivery Agency           | 손님이 구매한 메뉴를 전달하는 업체          |
 
-#### 주문 매장
-| 한글명          | 영문명                    | 설명                              |
-|--------------|------------------------|---------------------------------|
-| 매장 주문        | Eat-In Order           | 손님이 구매한 메뉴를 지정된 주문 테이블로 전달하여 제공 |
-| 주문 항목        | Order Line Item        | 손님이 구매 요청한 메뉴 모음    |
-| 주문 대기        | Eat-In Order Wating    | 매장 주문이 요청된 상태                   |
-| 주문 접수        | Eat-In Order Accepted  | 매장 주문이 접수된 상태                   |
-| 주문 제공        | Eat-In Order Served    | 매장 주문 메뉴가 제공된 상태                |
-| 주문 완료        | Eat-In Order Completed | 매장 주문이 완료된 상태                   |
-| 주문 테이블       | Order Table            | 매장 주문 손님이 사용하는 테이블              |
-| 주문 테이블 이름    | Order Table Name       | e.g. 1번 테이블, 2번 테이블, 3번 테이블     |
-| 사용중인 주문 테이블  | Occupied Order Table   | 손님이 사용중인 테이블                    |
-| 빈 주문 테이블     | Cleared Order Table    | 손님이 사용중이지 않은 테이블                |
+#### 매장 주문
+| 한글명         | 영문명                    | 설명                              |
+|-------------|------------------------|---------------------------------|
+| 매장 주문       | Eat-In Order           | 손님이 구매한 메뉴를 지정된 주문 테이블로 전달하여 제공 |
+| 주문 항목       | Order Line Item        | 손님이 구매 요청한 메뉴 모음                |
+| 매장 주문 대기    | Eat-In Order Waiting   | 매장 주문이 요청된 상태                   |
+| 매장 주문 접수    | Eat-In Order Accepted  | 매장 주문이 접수된 상태                   |
+| 매장 주문 제공    | Eat-In Order Served    | 매장 주문 메뉴가 제공된 상태                |
+| 매장 주문 완료    | Eat-In Order Completed | 매장 주문이 완료된 상태                   |
+| 주문 테이블      | Order Table            | 매장 주문 손님이 사용하는 테이블              |
+| 주문 테이블 이름   | Order Table Name       | e.g. 1번 테이블, 2번 테이블, 3번 테이블     |
+| 사용중인 주문 테이블 | Occupied Order Table   | 손님이 사용중인 테이블                    |
+| 빈 주문 테이블    | Cleared Order Table    | 손님이 사용중이지 않은 테이블                |
+| 손님          | Guest                  | 매장 주문을 이용하는 손님                  |
 
 #### 포장 주문
-| 한글명          | 영문명                  | 설명                  |
-|--------------|----------------------|---------------------|
-| 포장 주문        | Takeout Order        | 손님이 구매한 메뉴를 포장하여 제공 |
-| 주문 항목        | Order Line Item        | 손님이 구매 요청한 메뉴 모음    |
-| 주문 대기        | Takeout Order Wating    | 포장 주문이 요청된 상태       |
-| 주문 접수        | Takeout Order Accepted  | 포장 주문이 접수된 상태       |
-| 주문 제공        | Takeout Order Served    | 포장 주문 메뉴가 제공된 상태    |
-| 주문 완료        | Takeout Order Completed | 포장 주문이 완료된 상태       |
+| 한글명      | 영문명                     | 설명                  |
+|----------|-------------------------|---------------------|
+| 포장 주문    | Takeout Order           | 손님이 구매한 메뉴를 포장하여 제공 |
+| 주문 항목    | Order Line Item         | 손님이 구매 요청한 메뉴 모음    |
+| 포장 주문 대기 | Takeout Order Waiting   | 포장 주문이 요청된 상태       |
+| 포장 주문 접수 | Takeout Order Accepted  | 포장 주문이 접수된 상태       |
+| 포장 주문 제공 | Takeout Order Served    | 포장 주문 메뉴가 제공된 상태    |
+| 포장 주문 완료 | Takeout Order Completed | 포장 주문이 완료된 상태       |
 
 
 ## 모델링
