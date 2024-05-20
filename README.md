@@ -112,10 +112,11 @@ docker compose -p kitchenpos up -d
 | 메뉴 이름    | Menu Name          | 메뉴 상품들을 대표하는 명칭         |
 | 메뉴 가격    | Menu Price         | 손님이 지불해야될 금액            |
 | 메뉴 상품    | Menu Product       | 손님에게 제공하는 제품            |
+| 메뉴 상품 가격 | Menu Product Price | 손님에게 제공하는 제품 가격         |
 | 메뉴 상품 개수 | Menu Product Count | 손님에게 제공되는 제품 수량         |
 | 노출 메뉴    | Displayed Menu     | 손님에게 메뉴가 노출된 상태         |
 | 숨김 메뉴    | Hide Menu          | 손님에게 메뉴가 숨겨진 상태         |
-| 비속어   | Black Word    | 부적절한 내용               |
+| 비속어      | Black Word         | 부적절한 내용                 |
 
 ### 주문
 
@@ -178,12 +179,12 @@ docker compose -p kitchenpos up -d
   - `Menu Name`은 `Black Word`가 포함되면 등록할 수 없다.
   - `Menu Product`의 수량은 0 이상이어야 한다.
     - `Menu Product`로 등록하려면, `Product`로 등록돼야한다.
-  - `Menu Price`는 `Menu Product`의 `Product Price` 합 보다 크면 등록할 수 없다.
+  - `Menu Price`는 `Menu Product Price`의 합 보다 크면 등록할 수 없다.
 - 등록된 `Menu`의 `Menu Price`를 변경할 수 있다.
   - 변경될 `Menu Price`는 0원 이상이어야 한다.
-  - `Menu Price`는 `Menu Product`의 `Product Price` 합 보다 크면 변경할 수 없다.
+  - `Menu Price`는 `Menu Product Price`의 합 보다 크면 변경할 수 없다.
 - 등록된 `Menu`를 `Displayed Menu`로 변경할 수 있다.
-  - `Menu Price`는 `Menu Product`의 `Product Price` 합 보다 크면 변경할 수 없다.
+  - `Menu Price`는 `Menu Product Price`의 합 보다 크면 변경할 수 없다.
 - 등록된 `Menu`를 `Hide Menu`로 변경할 수 있다.
 
 ### 주문 테이블
@@ -201,11 +202,12 @@ docker compose -p kitchenpos up -d
 ![delivery_order_flow](images/delivery_order_flow.png)
 
 - `Delivery Order`을 등록하려면, `Order Line Item`, `Delivery Address`가 필요하다.
-  - `Order Line Item` 개수는 0개 이상이어야 한다.
-  - `Order Line Item`중 존재하지 않는 `Menu`면 등록할 수 없다.
-  - `Order Line Item`중  `Hide Menu`면 등록할 수 없다.
-  - `Delivery Address`는 빈 값이면 등록할 수 없다.
-  - `Order Line Item` 의 `Menu Price`는 실제 `Menu`의 `Menu Price`와 일치하지 않으면 등록할 수 없다.
+  - `Delivery Order Policy`
+    - `Order Line Item` 개수는 0개 이상이어야 한다.
+    - `Order Line Item`중 존재하지 않는 `Menu`면 등록할 수 없다.
+    - `Order Line Item`중  `Hide Menu`면 등록할 수 없다.
+    - `Delivery Address`는 빈 값이면 등록할 수 없다.
+    - `Order Line Item` 의 `Menu Price`는 실제 `Menu`의 `Menu Price`와 일치하지 않으면 등록할 수 없다.
 - 등록된 `Delivery Order`가 `Delivery Order Waiting`이면 `Delivery Order Accepted`로 변경할 수 있다.
 - `Delivery Order Accepted` 이면, `Delivery Agency`를 호출한다.
 - 등록된 `Delivery Order`가 `Delivery Order Accepted`이면, `Delivery Order Served`로 변경할 수 있다.
@@ -217,12 +219,13 @@ docker compose -p kitchenpos up -d
 ![eat-in_order_flow](images/eat-in_order_flow.png)
 
 - `Eat-In Order`을 등록하려면, `Order Line Item`, `Order Table`이 필요하다.
-  - `Order Line Item` 개수는 0 미만 일 수 있다.
-  - `Order Line Item`중 존재하지 않는 `Menu`면 등록할 수 없다.
-  - `Order Line Item`중  `Hide Menu`면 등록할 수 없다.
-  - `Order Line Item` 의 `Menu Price`는 실제 `Menu`의 `Menu Price`와 일치하지 않으면 등록할 수 없다.
-  - `Order Table`이 존재하지 않으면 등록할 수 없다.
-  - `Order Table`이 `Cleared Order Table`이면 등록할 수 없다.
+  - `Eat-In Order Policy`
+    - `Order Line Item` 개수는 0 미만 일 수 있다.
+    - `Order Line Item`중 존재하지 않는 `Menu`면 등록할 수 없다.
+    - `Order Line Item`중  `Hide Menu`면 등록할 수 없다.
+    - `Order Line Item` 의 `Menu Price`는 실제 `Menu`의 `Menu Price`와 일치하지 않으면 등록할 수 없다.
+    - `Order Table`이 존재하지 않으면 등록할 수 없다.
+    - `Order Table`이 `Cleared Order Table`이면 등록할 수 없다.
 - 등록된 `Eat-In Order`가 `Eat-In Order Waiting`이면 `Delivery Order Accepted`로 변경할 수 있다.
 - 등록된 `Eat-In Order`가 `Eat-In Order Accepted`이면, `Delivery Order Served`로 변경할 수 있다.
 - 등록된 `Eat-In Order`가 `Eat-In Order Served`이면, `Delivery Order Completed`로 변경할 수 있다.
@@ -232,10 +235,11 @@ docker compose -p kitchenpos up -d
 ![takeout_order_flow](images/takeout_order_flow.png)
 
 - `Takeout Order`을 등록하려면, `Order Line Item`가 필요하다.
-  - `Order Line Item` 개수는 0개 이상이어야 한다.
-  - `Order Line Item`중 존재하지 않는 `Menu`면 등록할 수 없다.
-  - `Order Line Item`중  `Hide Menu`면 등록할 수 없다.
-  - `Order Line Item` 의 `Menu Price`는 실제 `Menu`의 `Menu Price`와 일치하지 않으면 등록할 수 없다.
+  - `Takeout Order Policy`
+    - `Order Line Item` 개수는 0개 이상이어야 한다.
+    - `Order Line Item`중 존재하지 않는 `Menu`면 등록할 수 없다.
+    - `Order Line Item`중  `Hide Menu`면 등록할 수 없다.
+    - `Order Line Item` 의 `Menu Price`는 실제 `Menu`의 `Menu Price`와 일치하지 않으면 등록할 수 없다.
 - 등록된 `Takeout Order`가 `Takeout Order Waiting`이면 `Takeout Order Accepted`로 변경할 수 있다.
 - 등록된 `Takeout Order`가 `Takeout Order Accepted`이면, `Takeout Order Served`로 변경할 수 있다.
 - 등록된 `Takeout Order`가 `Takeout Order Served`이면, `Takeout Order Completed`로 변경할 수 있다.
