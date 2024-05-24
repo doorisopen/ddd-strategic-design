@@ -1,5 +1,8 @@
 package kitchenpos.domain.order;
 
+import kitchenpos.domain.order.domain.eatIn.OrderTable;
+import kitchenpos.domain.order.domain.eatIn.OrderTableRepository;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

@@ -1,5 +1,8 @@
 package kitchenpos.domain.product;
 
+import kitchenpos.domain.product.domain.Product;
+import kitchenpos.domain.product.domain.ProductRepository;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
